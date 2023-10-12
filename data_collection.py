@@ -19,9 +19,9 @@ while True:
 
     if hands:
         hand = hands[0]
-        x,y,w,h = hand['bbox']
+        x,y,w,h = hand['bbox'] #get bounding box from hand
 
-        if x - offset >= 0 and y - offset >= 0 and x + w + offset <= img.shape[1] and y + h + offset <= img.shape[0]:
+        if x - offset >= 0 and y - offset >= 0 and x + w + offset <= img.shape[1] and y + h + offset <= img.shape[0]: #if bounding box is within image
             imgWhite = np.ones((imgSize, imgSize, 3), np.uint8)*255 #create white image
             imgCrop = img[y - offset:y + h + offset, x - offset:x + w + offset] #crop image
 
